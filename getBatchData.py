@@ -11,7 +11,7 @@ auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_secret)
  
 api = tweepy.API(auth)
-queryHashtag = 'Olist'
+queryHashtag = 'UGM'
 
 def process_or_store(tweet):
     #print(json.dumps(tweet))
