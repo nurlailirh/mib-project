@@ -18,7 +18,7 @@ def process_or_store(tweet):
     #f = codecs.open('tweetDump.json', 'a','utf-8') #writing to local file.
     try:
         response = firehose_client.put_record(
-            DeliveryStreamName='mibproject01',
+            DeliveryStreamName='mibproject',
             Record={
                 'Data': json.dumps(tweet, ensure_ascii=False, encoding="utf-8")+'\n'
             }
@@ -30,7 +30,7 @@ def process_or_store(tweet):
     #f.close()
 
 firehose_client = boto3.client('firehose', region_name="us-east-1")
-LOG_FILENAME = '/tmp/mibproject01-twitter-data-stream.log'
+LOG_FILENAME = '/tmp/mibproject-twitter-data-stream.log'
 logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
 
 def main():
