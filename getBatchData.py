@@ -30,7 +30,7 @@ def process_or_store(tweet):
     #f.close()
 
 firehose_client = boto3.client('firehose', region_name="us-east-1")
-LOG_FILENAME = '/tmp/mibproject-twitter-data-stream.log'
+LOG_FILENAME = '/mibproject-twitter-data-stream.log'
 logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
 
 def main():
